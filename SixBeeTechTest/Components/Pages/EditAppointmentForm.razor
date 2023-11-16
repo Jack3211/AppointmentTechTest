@@ -1,0 +1,39 @@
+﻿@page "/edit-appointment/{AppointmentIdFromUrl}"
+@using SixBeeTechTest.ViewModels
+@rendermode InteractiveServer
+
+<h3>Edit Appointment</h3>
+
+<EditForm Model="@AppointmentDetails" OnValidSubmit="@SubmitAsync">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group row">
+        <label class="col-sm-1" for="name">Name</label>
+        <div class="col-sm-5">
+            <InputText @bind-Value="AppointmentDetails.Name" class="form-control" />
+        </div>
+        <label class="col-sm-1" for="date">Date</label>
+        <div class="col-sm-5">
+            <InputDate @bind-Value="AppointmentDetails.AppointmentDate" Type="InputDateType.DateTimeLocal" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="issue" class="col-sm-1">Issue</label>
+        <div class="col-sm-11">
+            <InputText @bind-Value="AppointmentDetails.Issue" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-1" for="contact-number">Contact Number</label>
+        <div class="col-sm-2">
+            <InputText @bind-Value="AppointmentDetails.ContactNumber" class="form-control" />
+        </div>
+        <label class="col-sm-1" for="email">Email Address</label>
+        <div class="col-sm-5">
+            <InputText @bind-Value="AppointmentDetails.EmailAddress" class="form-control" />
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-success" type="submit">Update Appointment</button>
+        </div>
+    </div>
+</EditForm>

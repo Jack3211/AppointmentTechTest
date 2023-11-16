@@ -41,6 +41,9 @@
                         <button type="button" @onclick="(() => ApproveAppointmentAsync(appointment.Id))" class="@GetApprovalButtonClass(appointment)">
                             <span class="glyphicon glyphicon-check" />
                         </button>
+                        <button type="button" @onclick="(() => EditAppointment(appointment.Id))" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil" />
+                        </button>
                     </td>
                 }
             </tr>

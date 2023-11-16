@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using SixBeeTechTest.Mappers;
 using SixBeeTechTest.ViewModels;
+using SixBeeTechTestData.Models;
 using SixBeeTechTestData.Repositories;
 using System.Security.Claims;
 
@@ -10,16 +11,19 @@ namespace SixBeeTechTest.Components.Pages
     public partial class Appointments
     {
         [Inject]
-        private IAppointmentRepository _appointmentsRepository {  get; set; }
+        private IAppointmentRepository _appointmentsRepository { get; set; } // Access to the database
 
-        public IEnumerable<AppointmentFormViewModel> AppointmentDetails { get; private set; } = Enumerable.Empty<AppointmentFormViewModel>();
+        [Inject]
+        private NavigationManager NavigationManager { get; set; }
 
         [Inject]
         private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
+
+        public IEnumerable<AppointmentFormViewModel> AppointmentDetails { get; private set; } = Enumerable.Empty<AppointmentFormViewModel>();
         private ClaimsPrincipal User;
         private string ErrorMessage = string.Empty;
 
-        // The initial page load to ensure the table is populated and set a user if there  is one logged in
+        // The initial page load to ensure the table is populated and set a user if there is one logged in
         protected override async Task OnInitializedAsync()
         {
             var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
@@ -42,6 +46,11 @@ namespace SixBeeTechTest.Components.Pages
             ErrorMessage = string.Empty;
             appointment.ApprovedBy = User?.Identity?.Name;
             await _appointmentsRepository.UpdateAppointmentAsync(appointment);
+        }
+
+        private void EditAppointment(int id)
+        {
+            NavigationManager.NavigateTo($"/edit-appointment/{id}");
         }
     }
 }
