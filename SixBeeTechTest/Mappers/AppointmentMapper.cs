@@ -5,7 +5,7 @@ namespace SixBeeTechTest.Mappers
 {
     public static class AppointmentMapper
     {
-        public static AppointmentFormViewModel ModelToFormViewModel(Appointment model)
+        public static AppointmentFormViewModel ModelToViewModel(Appointment model)
         {
             return new AppointmentFormViewModel
             {

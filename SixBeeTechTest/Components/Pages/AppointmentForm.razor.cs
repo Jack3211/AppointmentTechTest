@@ -2,6 +2,8 @@
 using SixBeeTechTestData.Repositories;
 using SixBeeTechTest.Mappers;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
+using System.Security.Claims;
 
 namespace SixBeeTechTest.Components.Pages
 {

@@ -2,6 +2,7 @@
 @using SixBeeTechTest.ViewModels
 @rendermode InteractiveServer
 
+
 <h3>Appointments</h3>
 
 <table class="table">
@@ -13,6 +14,10 @@
             <th>Contact Number</th>
             <th>Email Address</th>
             <th>Approved By</th>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <th>Actions</th>
+            }
         </tr>
     </thead>
     <tbody>
@@ -25,6 +30,14 @@
                 <td>@appointment.ContactNumber</td>
                 <td>@appointment.EmailAddress</td>
                 <td>@appointment.ApprovedBy</td>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <td>
+                        <button type="button" @onclick="ApproveAppointment" class="@GetApprovalButtonClass(appointment)">
+                            <span class="glyphicon glyphicon-check" />
+                        </button>
+                    </td>
+                }
             </tr>
         }
     </tbody>
@@ -34,5 +47,10 @@
     private string GetRowClass(AppointmentFormViewModel appointment)
     {
         return appointment.IsApproved() ? "approved" : "";
+    }
+
+    private string GetApprovalButtonClass(AppointmentFormViewModel appointment)
+    {
+        return appointment.IsApproved() ? "btn btn-success disabled" : "btn btn-success";
     }
 }
