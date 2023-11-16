@@ -9,6 +9,5 @@ namespace SixBeeTechTestData.Repositories
         Task AddAppointmentAsync(Appointment appointment);
         Task UpdateAppointmentAsync(Appointment appointment);
         Task DeleteAppointmentAsync(int id);
-        Task Approve(int id);
     }
 }

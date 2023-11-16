@@ -3,6 +3,7 @@ using SixBeeTechTestData.Models;
 
 namespace SixBeeTechTest.Mappers
 {
+    // To make switching back and forth between ViewModels an DTO's easier
     public static class AppointmentMapper
     {
         public static AppointmentFormViewModel ModelToViewModel(Appointment model)

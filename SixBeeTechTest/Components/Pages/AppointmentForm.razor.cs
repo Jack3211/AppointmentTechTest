@@ -16,6 +16,7 @@ namespace SixBeeTechTest.Components.Pages
 
         private bool AppointmentCreated = false;
 
+        // Updates the AppointmentCreated property so that the user gets a different display screen of their appointment details
         public async Task SubmitAsync()
         {
             AppointmentCreated = true;

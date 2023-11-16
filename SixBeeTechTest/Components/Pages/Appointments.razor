@@ -5,6 +5,11 @@
 
 <h3>Appointments</h3>
 
+@if (!string.IsNullOrEmpty(ErrorMessage))
+{
+    <p style="color: red">@ErrorMessage</p>
+}
+
 <table class="table">
     <thead>
         <tr>
@@ -33,7 +38,7 @@
                 @if (User.Identity.IsAuthenticated)
                 {
                     <td>
-                        <button type="button" @onclick="ApproveAppointment" class="@GetApprovalButtonClass(appointment)">
+                        <button type="button" @onclick="(() => ApproveAppointmentAsync(appointment.Id))" class="@GetApprovalButtonClass(appointment)">
                             <span class="glyphicon glyphicon-check" />
                         </button>
                     </td>

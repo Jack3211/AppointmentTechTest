@@ -1,10 +1,10 @@
-﻿@page "/appointmentform"
+﻿@page "/"
 @using SixBeeTechTest.ViewModels
 @rendermode InteractiveServer
 
 <h3>Appointment Form</h3>
 
-@if (AppointmentCreated)
+@if (AppointmentCreated) // readonly display of appointment details which is shown once the form has been submitted
 {
     <div>
         <label for="name">Name:</label>
@@ -19,7 +19,7 @@
         <p>@AppointmentDetails.EmailAddress</p>
     </div>
 }
-else
+else // The default view when creating an appointment
 {
     <EditForm Model="@AppointmentDetails" OnValidSubmit="@SubmitAsync">
         <DataAnnotationsValidator />

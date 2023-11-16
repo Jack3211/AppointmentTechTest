@@ -17,7 +17,9 @@ namespace SixBeeTechTest.Components.Pages
         [Inject]
         private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         private ClaimsPrincipal User;
+        private string ErrorMessage = string.Empty;
 
+        // The initial page load to ensure the table is populated and set a user if there  is one logged in
         protected override async Task OnInitializedAsync()
         {
             var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
@@ -28,15 +30,18 @@ namespace SixBeeTechTest.Components.Pages
             AppointmentDetails = (await _appointmentsRepository.GetAllAppointmentsAsync()).Select(AppointmentMapper.ModelToViewModel);
         }
 
+        // Takes the id of an appointment to approve and check that there is a valid user and the appointment exists
         private async Task ApproveAppointmentAsync(int id)
         {
-            var appointment = AppointmentDetails.FirstOrDefault(x => x.Id == id);
-            if (appointment == null && string.IsNullOrEmpty(User?.Identity?.Name))
+            var appointment = await _appointmentsRepository.GetAppointmentByIdAsync(id);
+            if (appointment != null && string.IsNullOrEmpty(User?.Identity?.Name))
             {
-                throw new Exception("Appointment Not Found");
+                ErrorMessage = "Invalid Approval, cancelling operation";
+                return;
             }
+            ErrorMessage = string.Empty;
             appointment.ApprovedBy = User?.Identity?.Name;
-            await _appointmentsRepository.UpdateAppointmentAsync(AppointmentMapper.ViewModelToModel(appointment));
+            await _appointmentsRepository.UpdateAppointmentAsync(appointment);
         }
     }
 }
