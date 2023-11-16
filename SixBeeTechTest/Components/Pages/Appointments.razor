@@ -1,0 +1,38 @@
+﻿@page "/appointments"
+@using SixBeeTechTest.ViewModels
+@rendermode InteractiveServer
+
+<h3>Appointments</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date & Time</th>
+            <th>Issue</th>
+            <th>Contact Number</th>
+            <th>Email Address</th>
+            <th>Approved By</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var appointment in AppointmentDetails)
+        {
+            <tr class="@GetRowClass(appointment)">
+                <td>@appointment.Name</td>
+                <td>@appointment.AppointmentDate.ToString("g")</td>
+                <td>@appointment.Issue</td>
+                <td>@appointment.ContactNumber</td>
+                <td>@appointment.EmailAddress</td>
+                <td>@appointment.ApprovedBy</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private string GetRowClass(AppointmentFormViewModel appointment)
+    {
+        return appointment.IsApproved() ? "approved" : "";
+    }
+}

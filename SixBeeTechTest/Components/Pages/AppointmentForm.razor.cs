@@ -9,7 +9,7 @@ namespace SixBeeTechTest.Components.Pages
     {
         [Inject]
         private IAppointmentRepository _appointmentRepository { get; set; }
-        public AppointmentFormViewModel AppointmentDetails { get; set; } = new AppointmentFormViewModel { AppointmentDate = DateTime.Today };
+        public AppointmentFormViewModel AppointmentDetails { get; private set; } = new AppointmentFormViewModel { AppointmentDate = DateTime.Today };
 
         public async Task SubmitAsync()
         {

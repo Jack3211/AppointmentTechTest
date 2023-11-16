@@ -15,7 +15,7 @@ namespace SixBeeTechTest.ViewModels
         public string ContactNumber { get; set; }
         [Required]
         public string EmailAddress { get; set; }
-        public string ApprovedBy { get; set; }
+        public string ApprovedBy { get; set; } = string.Empty;
         public bool IsApproved() => !string.IsNullOrWhiteSpace(ApprovedBy);
     }
 }
