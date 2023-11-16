@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 using SixBeeTechTest.Components.Account.Pages;
 using SixBeeTechTest.Components.Account.Pages.Manage;
-using SixBeeTechTest.Data;
+using SixBeeTechTestData;
 using System.Security.Claims;
 using System.Text.Json;
 

@@ -1,0 +1,21 @@
+﻿@page "/appointmentform"
+@using SixBeeTechTest.ViewModels
+@rendermode InteractiveServer
+
+<h3>Appointment Form</h3>
+
+<EditForm Model="@AppointmentDetails" OnValidSubmit="@SubmitAsync">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <label for="name">Name</label>
+    <InputText @bind-Value="AppointmentDetails.Name" />
+    <label for="name">Date</label>
+    <InputDate @bind-Value="AppointmentDetails.AppointmentDate" />
+    <label for="name">Issue</label>
+    <InputText @bind-Value="AppointmentDetails.Issue" />
+    <label for="name">Contact Number</label>
+    <InputText @bind-Value="AppointmentDetails.ContactNumber" />
+    <label for="name">Email Address</label>
+    <InputText @bind-Value="AppointmentDetails.EmailAddress" />
+    <button type="submit">Book Appointment</button>
+</EditForm>

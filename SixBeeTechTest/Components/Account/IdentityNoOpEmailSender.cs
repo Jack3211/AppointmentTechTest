@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
-using SixBeeTechTest.Data;
+using SixBeeTechTestData;
 
 namespace SixBeeTechTest.Components.Account
 {

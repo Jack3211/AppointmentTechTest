@@ -3,7 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SixBeeTechTest", "SixBeeTechTest\SixBeeTechTest.csproj", "{F9DBFF07-F36D-414C-84AE-C5460EAA0813}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SixBeeTechTest", "SixBeeTechTest\SixBeeTechTest.csproj", "{F9DBFF07-F36D-414C-84AE-C5460EAA0813}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EE063E41-2395-4CB6-8A56-9271EB806787}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SixBeeTechTestTests", "SixBeeTechTestTests\SixBeeTechTestTests.csproj", "{C718FCD9-FDF0-4BC7-852C-506F13FC61A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SixBeeTechTestData", "SixBeeTechTestData\SixBeeTechTestData.csproj", "{96C74935-15A2-4855-B838-E524640BF72C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +24,14 @@ Global
 		{F9DBFF07-F36D-414C-84AE-C5460EAA0813}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9DBFF07-F36D-414C-84AE-C5460EAA0813}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9DBFF07-F36D-414C-84AE-C5460EAA0813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C718FCD9-FDF0-4BC7-852C-506F13FC61A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C718FCD9-FDF0-4BC7-852C-506F13FC61A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C718FCD9-FDF0-4BC7-852C-506F13FC61A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C718FCD9-FDF0-4BC7-852C-506F13FC61A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96C74935-15A2-4855-B838-E524640BF72C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96C74935-15A2-4855-B838-E524640BF72C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96C74935-15A2-4855-B838-E524640BF72C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96C74935-15A2-4855-B838-E524640BF72C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
