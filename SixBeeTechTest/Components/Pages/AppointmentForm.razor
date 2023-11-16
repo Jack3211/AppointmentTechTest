@@ -27,7 +27,7 @@ else // The default view when creating an appointment
         <label for="name">Name</label>
         <InputText @bind-Value="AppointmentDetails.Name" />
         <label for="date">Date</label>
-        <InputDate @bind-Value="AppointmentDetails.AppointmentDate" />
+        <InputDate @bind-Value="AppointmentDetails.AppointmentDate" Type="InputDateType.DateTimeLocal" />
         <label for="issue">Issue</label>
         <InputText @bind-Value="AppointmentDetails.Issue" />
         <label for="contact-number">Contact Number</label>

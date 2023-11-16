@@ -27,7 +27,7 @@ namespace SixBeeTechTest.Components.Pages
 
             await base.OnInitializedAsync();
 
-            AppointmentDetails = (await _appointmentsRepository.GetAllAppointmentsAsync()).Select(AppointmentMapper.ModelToViewModel);
+            AppointmentDetails = (await _appointmentsRepository.GetAllAppointmentsAsync()).Select(AppointmentMapper.ModelToViewModel).OrderBy(x => x.AppointmentDate);
         }
 
         // Takes the id of an appointment to approve and check that there is a valid user and the appointment exists
